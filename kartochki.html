@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="kartochki.css">
+</head>
+<body>
+	<p>←</p>
+    <header>
+	<h1>Приветствия и прощания</h1>
+</header>
+
+<main mv-app="flashcards"
+		mv-storage="local"
+		mv-init="#data"
+		mv-autosave="3"
+		mv-bar="with import export">
+
+	<meta property="flashcardCount" content="[count(flashcard)]">
+
+	<span>[flashcardCount] шт.</span>
+	<article property="flashcard" mv-multiple>
+
+		<p property="source">Слово или фраза</p>
+		<p property="translation">Перевод</p>
+
+		<section>
+			<h2>Оцените себя</h2>
+			<button mv-action="move(flashcard, 0)">
+				👍🏻 Хорошо
+			</button>
+			<button mv-action="move(flashcard, flashcardCount)">
+				👎🏻 Плохо
+			</button>
+		</section>
+
+	</article>
+</main>
+
+<div id="data" hidden>
+{
+	"flashcard": [
+		{
+			"source": "person",
+			"translation": "человек, персона"
+		},
+		{
+			"source": "maiden name",
+			"translation": "девичья фамилия"
+		},
+		{
+			"source": "single",
+			"translation": "холостой/незамужняя"
+		},
+		{
+			"source": "married",
+			"translation": "женатый/замужняя"
+		},
+		{
+			"source": "aunt",
+			"translation": "тетя"
+		}
+	]
+}
+</div>
+<script src="https://get.mavo.io/mavo.min.js"></script>
+  <link rel="stylesheet" href="https://get.mavo.io/mavo.css">
+</body>
+</html>
