@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css?family=Lobster");
+@import url("https://fonts.googleapis.com/css?family=Oswald:300");
+
+// Basic Styling
+html {
+	margin: 0;
+	padding: 0;
+	font-size: 62.5%; // 1rem = 10px, 3.5rem = 35px
+}
+
+body {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	min-width: 32rem;
+	font-size: 2rem;
+	background-color: #FFFAFA;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+:root {
+	--main-font: "Oswald", sans-serif;
+	--label-font: "Oswald";
+	--bg-color:white (14, 20%, 25%);
+	--flashcard-bg-color:black (56, 100%, 97%);
+	--text-color: black(42, 71%, 44%);
+	--label-color: black(42, 71%, 33%);
+}
+
+header {
+	margin: 0;
+	padding: 0.1rem 1.5rem;
+	font-family: var(--main-font);
+	color: black;
+	background-color: var(--bg-color);
+    text-align: center;
+}
+
+header h1 {
+	font-weight: 100;
+}
+
+main {
+	position: relative;
+	margin: 5rem auto 2rem;
+	max-width: 65rem;
+	display: grid;
+	grid-template-columns: repeat(2, minmax(32rem, 1fr));
+	grid-gap: 2rem;
+	justify-items: right;
+	align-items: start;
+}
+
+main span {
+	grid-column: 1 / -1;
+	display: flex;
+	align-items: center;
+	margin: 0 auto;
+	width: 80%;
+	font-family: var(--main-font);
+	font-size: 2.8rem;
+	color: black;
+}
+
+main span::before,
+main span::after {
+	content: "";
+	flex: 1;
+	margin: 0 0.5em;
+	height: 0.15em;
+	border: solid white;
+	border-width: 0.05em 0;
+}
+
+main article {
+	padding: 3.5rem;
+	width: 32rem;
+	border-radius: 1.2rem;
+	color: var(--text-color);
+	background-color: var(--flashcard-bg-color);
+	background-image: radial-gradient(at 50% 0, var(--text-color), transparent 60%);
+	background-size: 100% 0.25rem;
+	background-repeat: no-repeat;
+	box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.3), 0 0 5rem #bebebe inset;
+}
+
+main article p {
+	position: relative;
+	padding-top: 0.2rem;
+	min-width: 100%;
+	font-family: var(--main-font);
+	font-size: 2.5rem;
+	font-weight: 400;
+	line-height: 2.5rem;
+	cursor: default;
+}
+
+main article p::before {
+	position: absolute;
+	top: -2.3rem;
+	font-family: var(--label-font);
+	font-size: 1.6rem;
+	color: rgb(0, 0, 0);
+}
+
+main article [property="source"] {
+	margin-bottom: 3.2rem;
+	font-size: 3.5rem;
+	line-height: 3.5rem;
+}
+
+main article [property="source"]::before {
+	content: "Слово или фраза";
+	top: -2.7rem;
+}
+
+main article [property="translation"]::before {
+	content: "Перевод";
+	top: -2.7rem;
+}
+
+main article [property="translation"] {
+	margin-top: 3.5rem;
+}
+
+main article>section {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	font-family: var(--label-font);
+}
+
+main article>section h2 {
+	width: 100%;
+	margin: 1.3rem 0;
+	margin-top: 0;
+	font-size: 2rem;
+	color: var(--label-color);
+}
+
+main article>section button {
+	padding: 0.8rem;
+	width: 12rem;
+	border: none;
+	border-radius: 0.7rem;
+	font-size: 2rem;
+	color: white;
+	cursor: pointer;
+	font-family: "Oswald" ;
+}
+
+main article>section button:first-of-type {
+	background-color: #317773;
+}
+
+main article>section button:first-of-type:hover {
+	background-color: #3b918b;
+}
+
+main article>section button:last-of-type {
+	background-color: #d01141;
+}
+
+main article>section button:last-of-type:hover {
+	background-color: #ec1349;
+}
+
+.mv-bar.mv-ui {
+	position: absolute;
+	top: -4.5rem;
+	width: 100%;
+	font-size: 1.5rem;
+}
+
+button.mv-add {
+	padding: .2em .5em;
+	font-size: 130%;
+	border-radius: .2em;
+	cursor: pointer;
+}
+
+p {
+	font-family: "Oswald" ;
+}
